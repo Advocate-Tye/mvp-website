@@ -1,0 +1,25 @@
+<body class="p-3 mb-2 bg-info text-black">
+  <div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <% include ./partials/messages %>
+
+    <h1 class="text-center mb-3">Join Class</h1>
+    <body class="p-3 mb-2 bg-dark text-info">
+    <form action="/class/joinclass" method="POST">
+      <div class="form-group">
+        <label for="cname">Class Name</label>
+        <input
+          type="text"
+          id="cname"
+          name="cname"
+          class="form-control"
+          placeholder="Enter Class Name"
+        />
+      </div>
+      <button type="submit" class="btn btn-dark btn-block">Join</button>
+    </form>
+    <body>
+  </div>
+  </div>
+</body>

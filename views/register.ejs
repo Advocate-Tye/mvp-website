@@ -1,0 +1,51 @@
+<body class="p-3 mb-2 bg-info text-black">
+  <div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          Register for an Account
+        </h1>
+
+        <% include ./partials/messages %>
+
+<body class="p-3 mb-2 bg-dark text-info">
+      <form action="/users/register" method="POST">
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input type="firstname" id="firstname" name="firstname" class="form-control" placeholder="John" value="<%= typeof firstname != 'undefined' ? firstname : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="lastname" id="lastname" name="lastname" class="form-control" placeholder="Doe" value="<%= typeof lastname != 'undefined' ? lastname : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="johndoe@gmail.com" value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+        </div>
+
+          <div class="form-group">
+            <label>Are you a student or a teacher?</label>
+
+            <label>
+            <input value="false" type="radio" name="teacher" checked="checked"> Student</label>
+            <label>
+            <input value="true" type="radio" name="teacher"> Teacher</label>
+          </div>
+
+        <button type="submit" class="btn btn-dark btn-block">
+          Register
+        </button>
+      </form>
+      <p>Already registered? <a href="/users/login">Login</a></p>
+  </body>
+    </div>
+  </div>
+</body>
