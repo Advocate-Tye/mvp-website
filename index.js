@@ -42,7 +42,6 @@ app.use((req, res, next) => {
 
 app.use('/', require('./routing/main'));
 app.use('/users', require('./routing/users'));
-app.use('/class', require('./routing/class'));
 
 app.use(express.static(__dirname + '/local'));
 

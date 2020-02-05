@@ -1,15 +1,17 @@
 const mongoose = require('mongoose');
 
 const AccSchema = new mongoose.Schema({
-  firstname: String,
+  username: String,
 
-  lastname: String,
+  instagram: String,
 
   email: String,
 
   password: String,
 
-  teacher: {
+
+
+  business: {
     type: Boolean,
     default: false,
   }

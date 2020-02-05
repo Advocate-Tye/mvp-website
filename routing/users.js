@@ -12,12 +12,12 @@ router.get('/register', (req, res) => res.render("register"));
 //Registration request handling
 router.post('/register', (req, res) => {
   //console.log("new account registered: %j", req.body);
-  const { firstname, lastname, email, password, password2, teacher } = req.body;
+  const { username, password, password2 } = req.body;
   let errors = [];
 
   //console.log(firstname);
 
-  if (!firstname || !lastname || !email || !password || !password2 || !teacher) {
+  if (!username || !password || !password2) {
     errors.push({ msg: 'Required field is empty' });
   }
 
@@ -32,35 +32,26 @@ router.post('/register', (req, res) => {
   if (errors.length >= 1) {
     res.render('register', {
       errors,
-      firstname,
-      lastname,
-      email,
+      username,
       password,
       password2,
-      teacher
     });
   } else {
-    User.findOne({ email: email }).then(user => {
+    User.findOne({ username: username }).then(user => {
       if(user) {
-        errors.push({ msg: "Email is already registered" });
+        errors.push({ msg: "Username is taken" });
         res.render('register', {
           errors,
-          firstname,
-          lastname,
-          email,
+          username,
           password,
           password2,
-          teacher
         });
       } else {
         //console.log(firstname);
 
         const newAccount = new User({
-          firstname,
-          lastname,
-          email,
-          password,
-          teacher
+          username,
+          password
         });
 
         console.log("new account registered: %j", newAccount);
@@ -74,7 +65,7 @@ router.post('/register', (req, res) => {
             newAccount.password = hash;
 
             newAccount.save().then(user => {
-              req.flash('success_msg', 'Successfully registered! Please login to continue.')
+              req.flash('success_msg', 'Successfully registered! Please login to start earning!')
               res.redirect('/users/login');
             }).catch(err => {
               console.log(err);
@@ -97,7 +88,7 @@ router.post('/login', (req, res, next) => {
 
 router.get('/logout', (req, res) => {
   req.logout();
-  req.flash('success_msg', 'Successfully signed out');
+  req.flash('success_msg', 'Successfully signed out.');
   res.redirect('/');
 });
 
