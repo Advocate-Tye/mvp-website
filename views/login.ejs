@@ -1,36 +1,39 @@
-<body class="p-3 mb-2 text-black">
+<body class="p-3 mb-2 text-black" style="vertical-align: middle">
   <section class="section-col row" style="flex-direction: row">
-    <a class="logo" href="#">Placeholder</a>
+    <a class="logo" href="#" style="margin-left: 15px;"><h2>advocate logo</h2></a>
+  </section>
+  <section class="section-col row" style="flex-direction: row; margin-top: 1em;">
 
-    <div class="col" style="margin-top: 60px; display: block; vertical-align: baseline; float: left;">
-      <form action="/users/login" method="POST">
+    <div class="col" style="margin-top: 10px; display: block; vertical-align: baseline; float: left;">
+      <h4 class="d-flex justify-content-center">Sign in to Advocate</h4>
+      <form action="/users/login" method="POST" style="margin-top: 1em">
         <div class="form-group">
-          <label for="username">Username</label>
           <input
             type="username"
             id="username"
             name="username"
             class="form-control"
-            placeholder="Enter Username"
+            placeholder="Username"
           />
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
             class="form-control"
-            placeholder="Enter Password"
+            placeholder="Password"
           />
         </div>
-        <button type="submit" class="btn btn-dark">Login</button>
+        <button type="submit" class="btn btn-info btn-block">Login</button>
       </form>
       <p class="lead mt-4">
         Don't have an account? <a href="/users/register"> Register Now</a>
       </p>
+
+      <% include ./partials/messages %>
     </div>
-    <div class="col" style="position: relative; overflow: hidden; margin: 60px 0 30px;">
+    <div class="col" style="position: relative; overflow: hidden; margin: 10px 0 30px;">
       <div class="card text-darkgrey bg-grey mb-3">
         <div class="card-body" style="height: 100%;">
           <h1>Placeholder</h1>

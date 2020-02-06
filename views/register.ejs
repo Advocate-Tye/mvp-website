@@ -1,33 +1,58 @@
-<body class="p-3 mb-2 bg-info text-black">
-  <div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body">
-        <h1 class="text-center mb-3">
-          Register for an Account
-        </h1>
 
-        <% include ./partials/messages %>
+<body class="p-3 mb-2 text-black" style="vertical-align: middle">
+  <section class="section-col row" style="flex-direction: row">
+    <a class="logo" href="#" style="margin-left: 15px;"><h2>advocate logo</h2></a>
+  </section>
+  <section class="section-col row" style="flex-direction: row; margin-top: 1em;">
 
-<body class="p-3 mb-2 bg-dark text-info">
-      <form action="/users/register" method="POST">
+    <div class="col" style="margin-top: 10px; display: block; vertical-align: baseline; float: left;">
+      <h4 class="d-flex justify-content-center">Register for Advocate</h4>
+      <form action="/users/register" method="POST" style="margin-top: 1em">
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="firstname" id="username" name="username" class="form-control" placeholder="username" value="<%= typeof firstname != 'undefined' ? firstname : '' %>" />
+          <input type="firstname" id="username" name="username" class="form-control" placeholder="Username" value="<%= typeof firstname != 'undefined' ? firstname : '' %>" />
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
           <input type="password" id="password" name="password" class="form-control" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
         </div>
         <div class="form-group">
-          <label for="password2">Confirm Password</label>
           <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
         </div>
-        <button type="submit" class="btn btn-dark btn-block">
-          Register
-        </button>
+        <button type="submit" class="btn btn-info btn-block">Register</button>
       </form>
-      <p>Already registered? <a href="/users/login">Login</a></p>
-  </body>
+      <p class="lead mt-4">Already registered? <a href="/users/login">Login</a></p>
+
+      <% include ./partials/messages %>
     </div>
-  </div>
+    <div class="col" style="position: relative; overflow: hidden; margin: 10px 0 30px;">
+      <div class="card text-darkgrey bg-grey mb-3">
+        <div class="card-body" style="height: 100%;">
+          <h1>Placeholder</h1>
+          <p class="card-text">More placeholder text</p>
+          <button type="button" class="btn btn-outline-info">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
+
+<style media="screen">
+  .section-col {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: block;
+    margin-top: 35px;
+    height: 34px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .logo::selection {
+    background: #dedede;
+    color: #484848;
+    text-shadow: none;
+  }
+</style>
