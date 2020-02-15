@@ -9,6 +9,8 @@ router.get('/login', (req, res) => res.render("login"));
 
 router.get('/register', (req, res) => res.render("register"));
 
+router.get('/business', (req, res) => res.render("business"));
+
 //Registration request handling
 router.post('/register', (req, res) => {
   //console.log("new account registered: %j", req.body);
@@ -80,7 +82,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dashboard',
+    successRedirect: '/almostthere',
     failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next);
