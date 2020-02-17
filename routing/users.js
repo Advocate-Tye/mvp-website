@@ -15,6 +15,7 @@ router.get('/business', (req, res) => res.render("business"));
 router.post('/register', (req, res) => {
   //console.log("new account registered: %j", req.body);
   const { username, password, password2 } = req.body;
+  const points = 0;
   let errors = [];
 
   //console.log(firstname);
@@ -53,7 +54,8 @@ router.post('/register', (req, res) => {
 
         const newAccount = new User({
           username,
-          password
+          password,
+          points
         });
 
         console.log("new account registered: %j", newAccount);
@@ -82,7 +84,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/almostthere',
+    successRedirect: '/dashboard',
     failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next);

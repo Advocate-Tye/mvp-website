@@ -6,8 +6,18 @@ const { ensureAuthenticated } = require('../config/authenticate');
 
 router.get('/', (req, res) => res.redirect('/users/login'));
 
-router.get('/almostthere', ensureAuthenticated, (req, res) => {
+router.get('/dashboard', ensureAuthenticated, (req, res) => {
   res.render('dashboard', {user: req.user});
+  console.log(req);
+});
+
+router.get('/connect', ensureAuthenticated, (req, res) => {
+  res.render('connections', {user: req.user});
+  console.log(req);
+});
+
+router.get('/store', ensureAuthenticated, (req, res) => {
+  res.render('store', {user: req.user});
   console.log(req);
 });
 
