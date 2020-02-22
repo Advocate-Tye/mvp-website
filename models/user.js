@@ -10,9 +10,18 @@ const AccSchema = new mongoose.Schema({
   points: Number,
 
   socials: {
-    instagram: String,
-    twitter: String,
-    facebook: String
+    instagram: {
+      type: String,
+      default: ""
+    },
+    twitter: {
+      type: String,
+      default: ""
+    },
+    facebook: {
+      type: String,
+      default: ""
+    }
   },
 
   business: {
