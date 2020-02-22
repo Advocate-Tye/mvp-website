@@ -1,21 +1,21 @@
 {
-  "name": "project",
+  "name": "mvp-website",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saad-app-challenge/project.git"
+    "url": "git+https://github.com/Advocate-Tye/mvp-website.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saad-app-challenge/project/issues"
+    "url": "https://github.com/Advocate-Tye/mvp-website/issues"
   },
-  "homepage": "https://github.com/saad-app-challenge/project#readme",
+  "homepage": "https://github.com/Advocate-Tye/mvp-website#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
