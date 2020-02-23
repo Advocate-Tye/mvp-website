@@ -5,7 +5,7 @@ const mongojs = require('mongojs');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
-const session = require('express-session');
+const esession = require('express-session');
 
 const app = express();
 
@@ -22,10 +22,10 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false}));
 
-app.use(session({
+app.use(esession({
   secret: 'abcdef',
-  resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  resave: true
 }));
 
 app.use(passport.initialize());

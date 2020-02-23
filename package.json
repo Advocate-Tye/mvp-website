@@ -24,7 +24,7 @@
     "ejs-layouts": "0.0.1",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "express-session": "^1.16.2",
+    "express-session": "^1.17.0",
     "mongodb": "^3.3.2",
     "mongojs": "^2.6.0",
     "mongoose": "^5.7.3",
