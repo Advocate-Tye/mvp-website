@@ -9,41 +9,21 @@ const { ensureAuthenticated } = require('../config/authenticate');
    console.log(req)
  });
 
-// router.get('/', (req, res) => res.redirect('/users/login'));
-//
-// router.get('/dashboard', ensureAuthenticated, (req, res) => {
-//   res.render('dashboard', {user: req.user});
-//   console.log(req);
-// });
-//
-// router.get('/connect', ensureAuthenticated, (req, res) => {
-//   res.render('connections', {user: req.user});
-//   console.log(req);
-// });
-//
-// router.get('/store', ensureAuthenticated, (req, res) => {
-//   res.render('store', {user: req.user});
-//   console.log(req);
-// });
-//
-// router.get('/calendar', ensureAuthenticated, (req, res) => {
-//   res.render('calendar', {user: req.user});
-//   console.log(req);
-// });
-//
-// router.get('/createclass', ensureAuthenticated, (req, res) => {
-//   res.render('createclass', {user: req.user});
-//   console.log(req);
-// });
-//
-// router.get('/joinclass', ensureAuthenticated, (req, res) => {
-//   res.render('joinclass', {user: req.user});
-//   console.log(req);
-// });
-//
-// router.get('/classpg', ensureAuthenticated, (req, res) => {
-//   res.render('classpg', {user: req.user, aclass: req.aclass});
-//   console.log(req);
-// });
+router.get('/', (req, res) => res.redirect('/users/login'));
+
+router.get('/dashboard', ensureAuthenticated, (req, res) => {
+  res.render('dashboard', {user: req.user});
+  console.log(req);
+});
+
+router.get('/connect', ensureAuthenticated, (req, res) => {
+  res.render('connections', {user: req.user});
+  console.log(req);
+});
+
+router.get('/store', ensureAuthenticated, (req, res) => {
+  res.render('store', {user: req.user});
+  console.log(req);
+});
 
 module.exports = router;

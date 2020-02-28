@@ -1,50 +1,37 @@
-<body class="p-3 mb-2 text-black" style="vertical-align: middle">
-  <section class="section-col row" style="flex-direction: row">
-    <a class="logo" href="#" style="margin-left: 15px;"><h2>advocate logo</h2></a>
-  </section>
-  <section class="section-col row" style="flex-direction: row; margin-top: 1em;">
+<section class="section-col row" style="flex-direction: row">
+  <a class="logo" href="#" style="margin-left: 15px;">
+    <h2>advocate logo</h2>
+  </a>
+</section>
+<section class="section-col row" style="flex-direction: row; margin-top: 1em;">
 
-    <div class="col" style="margin-top: 10px; display: block; vertical-align: baseline; float: left;">
-      <h4 class="d-flex justify-content-center">Sign in to Advocate</h4>
-      <form action="/users/login" method="POST" style="margin-top: 1em">
-        <div class="form-group">
-          <input
-            type="username"
-            id="username"
-            name="username"
-            class="form-control"
-            placeholder="Username"
-          />
-        </div>
-        <div class="form-group">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="form-control"
-            placeholder="Password"
-          />
-        </div>
-        <button type="submit" class="btn btn-info btn-block">Login</button>
-      </form>
-      <p class="lead mt-4">
-        Don't have an account? <a href="/users/register"> Register Now</a>
-      </p>
+  <div class="col" style="margin-top: 10px; display: block; vertical-align: baseline; float: left;">
+    <h4 class="d-flex justify-content-center">Sign in to Advocate</h4>
+    <form action="/users/login" method="POST" style="margin-top: 1em">
+      <div class="form-group">
+        <input type="username" id="username" name="username" class="form-control" placeholder="Username" />
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+      </div>
+      <button type="submit" class="btn btn-info btn-block">Login</button>
+    </form>
+    <p class="lead mt-4">
+      Don't have an account? <a href="/users/register"> Register Now</a>
+    </p>
 
-      <% include ./partials/messages %>
-    </div>
-    <div class="col" style="position: relative; overflow: hidden; margin: 10px 0 30px;">
-      <div class="card text-darkgrey bg-grey mb-3">
-        <div class="card-body" style="height: 100%;">
-          <h1>Placeholder</h1>
-          <p class="card-text">More placeholder text</p>
-          <button type="button" class="btn btn-outline-info">Learn More</button>
-        </div>
+    <% include ./partials/messages %>
+  </div>
+  <div class="col" style="position: relative; overflow: hidden; margin: 10px 0 30px;">
+    <div class="card text-darkgrey bg-grey mb-3">
+      <div class="card-body" style="height: 100%;">
+        <h1>Placeholder</h1>
+        <p class="card-text">More placeholder text</p>
+        <button type="button" class="btn btn-outline-info">Learn More</button>
       </div>
     </div>
-  </section>
-
-</body>
+  </div>
+</section>
 
 <style media="screen">
   .section-col {

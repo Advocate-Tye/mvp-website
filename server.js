@@ -14,7 +14,7 @@ require('./config/passport')(passport);
 const db = require('./config/keys').MongoURI;
 
 mongoose.connect(db, { useNewURLParser: true })
-  .then(() => console.log('Connected to SAAD atlas db'))
+  .then(() => console.log('Connected to atlas DB'))
   .catch(err => console.log(err));
 
 app.use(expressjs);
@@ -40,10 +40,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', require('./routing/main'));
-// app.use('/users', require('./routing/users'));
-
 app.use(express.static(__dirname + '/local'));
+
+app.use('/', require('./routing/main'));
+app.use('/users', require('./routing/users'));
 
 const port = process.env.PORT || 3000;
 app.listen(port, function() {

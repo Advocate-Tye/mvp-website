@@ -7,6 +7,8 @@ const User = require('../models/user');
 
 router.get('/login', (req, res) => res.render("login"));
 
+router.get('/betatest', (req, res) => res.render("betatest"));
+
 router.get('/register', (req, res) => res.render("register"));
 
 router.get('/business', (req, res) => res.render("business"));
