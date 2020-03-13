@@ -1,5 +1,5 @@
 
-<body class="p-3 mb-2 text-black" style="vertical-align: middle">
+<body class="mb-2 text-black" style="vertical-align: middle">
   <section class="section-col row" style="flex-direction: row">
     <a class="logo" href="#" style="margin-left: 15px;"><h2>advocate logo</h2></a>
   </section>
@@ -10,6 +10,9 @@
       <form action="/users/register" method="POST" style="margin-top: 1em">
         <div class="form-group">
           <input type="firstname" id="username" name="username" class="form-control" placeholder="Username" value="<%= typeof firstname != 'undefined' ? firstname : '' %>" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="invitecode" class="form-control" placeholder="Invite code" value="<%= typeof firstname != 'undefined' ? firstname : '' %>" />
         </div>
         <div class="form-group">
           <input type="businessname" id="businessname" name="businessname" class="form-control" placeholder="Business Name" value="<%= typeof businessname != 'undefined' ? businessname : '' %>" />

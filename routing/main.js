@@ -16,6 +16,11 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
   console.log(req);
 });
 
+router.get('/businessdashboard', (req, res) => {
+  res.render('dashboard');
+  console.log(req);
+});
+
 router.get('/connect', ensureAuthenticated, (req, res) => {
   res.render('connections', {user: req.user});
   console.log(req);
@@ -27,3 +32,4 @@ router.get('/store', ensureAuthenticated, (req, res) => {
 });
 
 module.exports = router;
+//hello world
