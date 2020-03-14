@@ -78,3 +78,8 @@
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+
+.chartdata {
+  max-width: 500px;
+  max-height: 500px;
+}
