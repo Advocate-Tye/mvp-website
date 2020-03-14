@@ -43,7 +43,9 @@ app.use((req, res, next) => {
 app.use(express.static(__dirname + '/local'));
 
 app.use('/', require('./routing/main'));
+app.use('/admin', require('./routing/admin'));
 app.use('/users', require('./routing/users'));
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, function() {

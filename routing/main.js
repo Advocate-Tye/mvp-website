@@ -6,29 +6,34 @@ const { ensureAuthenticated } = require('../config/authenticate');
 
  router.get('/', (req, res) => {
    res.render('comingsoon');
-   console.log(req)
+   //console.log(req)
  });
 
-router.get('/', (req, res) => res.redirect('/users/login'));
+//router.get('/', (req, res) => res.redirect('/users/login'));
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
-  res.render('dashboard', {user: req.user});
-  console.log(req);
+  if (req.user.isbusiness == false) {
+    res.render('dashboard', {user: req.user});
+  } else {
+    res.render('businessdashboard', {user: req.user});
+  }
+
+  //console.log(req);
 });
 
 router.get('/businessdashboard', (req, res) => {
   res.render('dashboard');
-  console.log(req);
+  //console.log(req);
 });
 
 router.get('/connect', ensureAuthenticated, (req, res) => {
   res.render('connections', {user: req.user});
-  console.log(req);
+  //console.log(req);
 });
 
 router.get('/store', ensureAuthenticated, (req, res) => {
   res.render('store', {user: req.user});
-  console.log(req);
+  //console.log(req);
 });
 
 module.exports = router;

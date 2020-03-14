@@ -16,13 +16,13 @@ router.get('/business', (req, res) => res.render("business"));
 //Registration request handling
 router.post('/register', (req, res) => {
   //console.log("new account registered: %j", req.body);
-  const { username, password, password2 } = req.body;
+  const { email, password, password2 } = req.body;
   const points = 0;
   let errors = [];
 
   //console.log(firstname);
 
-  if (!username || !password || !password2) {
+  if (!email || !password || !password2) {
     errors.push({ msg: 'Required field is empty' });
   }
 
@@ -37,17 +37,17 @@ router.post('/register', (req, res) => {
   if (errors.length >= 1) {
     res.render('register', {
       errors,
-      username,
+      email,
       password,
       password2,
     });
   } else {
-    User.findOne({ username: username }).then(user => {
-      if(user) {
-        errors.push({ msg: "Username is taken" });
+    User.findOne({ email: email }).then(user => {
+      if (user) {
+        errors.push({ msg: "Email is taken" });
         res.render('register', {
           errors,
-          username,
+          email,
           password,
           password2,
         });
@@ -55,7 +55,7 @@ router.post('/register', (req, res) => {
         //console.log(firstname);
 
         const newAccount = new User({
-          username,
+          email,
           password,
           points
         });
@@ -84,7 +84,86 @@ router.post('/register', (req, res) => {
   }
 });
 
+router.post('/business', (req, res) => {
+  const { email, invite, password, password2 } = req.body;
+  let errors = [];
+
+
+  if (!email || !invite || !password || !password2) {
+    errors.push({ msg: 'Required field is empty' });
+  }
+
+  if (password != password2) {
+    errors.push({ msg: 'Passwords do not match' });
+  }
+
+  if (password.length < 6) {
+    errors.push({ msg: 'Password is too short. Minimum of 6 characters' });
+  }
+
+  User.findOne({ email: email }).then(user => {
+    if (!user) {
+      errors.push({ msg: "Email is already taken" })
+    }
+  });
+
+  if (errors.length >= 1) {
+    res.render('business', {
+      errors,
+      email,
+      invite,
+      password,
+      password2,
+    });
+  } else {
+    User.findOne({ invite: invite }).then(user => {
+      if (user) {
+        if (user.invite == "") {
+          errors.push({ msg: "Invite code is invalid" });
+          res.render('business', {
+            errors,
+            email,
+            invite,
+            password,
+            password2,
+          });
+        }
+        user.email = email;
+        user.password = password;
+        user.invite = "";
+
+        //bcryptjs password hashing
+
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(user.password, salt, (err, hash) => {
+            if(err) { throw err; }
+
+            user.password = hash;
+
+            user.save().then(user => {
+              req.flash('success_msg', 'Successfully registered! Please login to start earning!')
+              res.redirect('/users/login');
+            }).catch(err => {
+              console.log(err);
+            });
+          });
+        });
+      } else {
+        errors.push({ msg: "Invite code is invalid" });
+        res.render('business', {
+          errors,
+          email,
+          invite,
+          password,
+          password2,
+        });
+      }
+    });
+  }
+});
+
 router.post('/login', (req, res, next) => {
+  console.log(req.body);
   passport.authenticate('local', {
     successRedirect: '/dashboard',
     failureRedirect: '/users/login',

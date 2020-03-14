@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const BusinessSchema = new mongoose.Schema({
-
   businessname: String,
 
   invite:  String,

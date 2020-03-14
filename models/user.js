@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
 
 const AccSchema = new mongoose.Schema({
-  username: String,
+  invite: String,
 
   email: String,
 
   password: String,
 
   points: Number,
+
+  business: String,
 
   socials: {
     instagram: {
@@ -24,7 +26,12 @@ const AccSchema = new mongoose.Schema({
     }
   },
 
-  business: {
+  isbusiness: {
+    type: Boolean,
+    default: false,
+  },
+
+  admin: {
     type: Boolean,
     default: false,
   }

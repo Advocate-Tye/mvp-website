@@ -8,7 +8,7 @@ module.exports = function (passport) {
   passport.use(
     new LocalStrategy({ usernameField: 'username'}, (username, password, done) => {
 
-      User.findOne({ username: username })
+      User.findOne({ email: username })
         .then(user => {
           if (!user) {
             return done(null, false, { message: 'Specified username is not associated with an account' });
