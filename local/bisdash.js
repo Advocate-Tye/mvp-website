@@ -23,7 +23,7 @@ var pointsChart = new Chart(ctx, {
     labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'],
     datasets: [{
       label: ' - Points earned',
-      data: [10, 12, 10, 14, 23, 23, 30],
+      data: [100, 120, 100, 140, 230, 230, 300],
       borderColor: "rgba(255, 36, 72, 1)",
       //fill: false,
       backgroundColor: gradientColor,
@@ -79,7 +79,7 @@ var salesChart = new Chart(ctx, {
     labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'],
     datasets: [{
       label: ' - Product One',
-      data: [20, 10, 14, 52, 23, 23, 40],
+      data: [2, 9, 6, 3, 4, 2, 4],
       borderColor: "rgba(36, 255, 72, 1)",
       fill: false,
       backgroundColor: "rgba(36, 255, 72, 1)",
@@ -90,7 +90,7 @@ var salesChart = new Chart(ctx, {
     },
        {
       label: ' - Product Two',
-      data: [12, 9, 16, 53, 20, 12, 14],
+      data: [6, 1, 2, 5, 2, 2, 4],
       borderColor: "rgba(72, 36, 255, 1)",
       fill: false,
 backgroundColor: "rgba(72, 36, 255, 1)",
@@ -101,7 +101,7 @@ backgroundColor: "rgba(72, 36, 255, 1)",
     },
                {
       label: ' - Product Three',
-      data: [26, 10, 12, 15, 12, 2, 14],
+      data: [5, 2, 4, 2, 3, 3, 8],
       borderColor: "rgba(255, 72, 36, 1)",
       fill: false,
       backgroundColor: "rgba(255, 72, 36, 1)",
