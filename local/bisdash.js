@@ -1,14 +1,14 @@
 Chart.defaults.global.tooltips.backgroundColor = "rgba(255, 36, 72, 1)";
-Chart.defaults.global.defaultFontColor = "gray";
-Chart.defaults.global.defaultFontFamily = "Open Sans Condensed";
-Chart.defaults.global.defaultFontSize = 14;
+// Chart.defaults.global.defaultFontColor = "gray";
+// Chart.defaults.global.defaultFontFamily = "Open Sans Condensed";
+// Chart.defaults.global.defaultFontSize = 14;
 
 
-WebFont.load({
-    google: {
-        families: ['Condensed', 'Futura BT']
-    }
-});
+// WebFont.load({
+//     google: {
+//         families: ['Condensed', 'Futura BT']
+//     }
+// });
 var ctx = document.getElementById('myChart').getContext("2d");
 var gradientColor = ctx.createLinearGradient(90, 500, 0, 100, 0);
 gradientColor.addColorStop(0.2, "rgba(255, 36, 72, 0)");
