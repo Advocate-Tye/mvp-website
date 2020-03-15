@@ -23,7 +23,7 @@ var pointsChart = new Chart(ctx, {
     labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'],
     datasets: [{
       label: ' - Points earned',
-      data: [20, 10, 14, 52, 23, 23, 40],
+      data: [10, 12, 10, 14, 23, 23, 30],
       borderColor: "rgba(255, 36, 72, 1)",
       //fill: false,
       backgroundColor: gradientColor,
