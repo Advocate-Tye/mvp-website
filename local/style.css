@@ -82,5 +82,38 @@
 .card {
   box-shadow: 0 7px 14px 0 rgba(65,69,88,.1), 0 3px 6px 0 rgba(0,0,0,.07);
   width: 50vh;
-  height: 50vh;
+  height: 55vh;
+    padding-top: 0px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+}
+
+.card2 {
+  box-shadow: 0 7px 14px 0 rgba(65,69,88,.1), 0 3px 6px 0 rgba(0,0,0,.07);
+  width: 50vh;
+  height: 10vh;
+    padding-top: 0px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.custom-dropdown select {
+  background-color: #ff2448;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: ''; */
+  -webkit-appearance: button;
 }
