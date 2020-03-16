@@ -1,3 +1,7 @@
+const posts = document.getElementById("post");
+calculateEstimate();
+posts.addEventListener('input', calculateEstimate)
+
 function showPop() {
   var popup = document.getElementById("popC");
   popup.classList.toggle("show");
@@ -25,3 +29,10 @@ function setInputFilter(textbox, inputFilter) {
 setInputFilter(document.getElementById("post"), function(value) {
   return /^-?\d*$/.test(value);
 });
+
+function calculateEstimate() {
+  var postInput = posts.value;
+  console.log(postInput);
+  var calculatedValue = postInput * 9 - 3;
+  document.getElementById("dollarAmount").innerHTML = "$" + calculatedValue;
+}
