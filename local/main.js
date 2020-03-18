@@ -33,6 +33,10 @@ setInputFilter(document.getElementById("post"), function(value) {
 function calculateEstimate() {
   var postInput = posts.value;
   console.log(postInput);
-  var calculatedValue = postInput * 9 - 3;
+  var calculatedValue = 0;
+  if (postInput > 0) {
+    calculatedValue = postInput * 9 + 3;
+  }
+
   document.getElementById("dollarAmount").innerHTML = "$" + calculatedValue;
 }
