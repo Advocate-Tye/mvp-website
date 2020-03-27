@@ -13,6 +13,8 @@ router.get('/register', (req, res) => res.render("register"));
 
 router.get('/business', (req, res) => res.render("business"));
 
+router.get('/businessinfo', (req, res) => res.render(""))
+
 //Registration request handling
 router.post('/register', (req, res) => {
   //console.log("new account registered: %j", req.body);
