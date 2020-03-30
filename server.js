@@ -11,7 +11,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-const User = require('C:/Users/there/Documents/GitHub/mvp-website/models/user');
+const User = require('./models/user');
 
 require('./config/passport')(passport);
 
