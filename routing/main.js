@@ -31,6 +31,9 @@ router.get('/businessdashboard', (req, res) => {
   //console.log(req);
 });
 
+router.get('/learnmore', (req, res) => {
+  res.render('businessinfo');
+});
 router.get('/connect', ensureAuthenticated, (req, res) => {
   res.render('connections', {user: req.user});
   //console.log(req);
