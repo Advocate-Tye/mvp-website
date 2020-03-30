@@ -11,6 +11,8 @@ const AccSchema = new mongoose.Schema({
 
   business: String,
 
+  referral: String,
+
   socials: {
     instagram: {
       type: String,
