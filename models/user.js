@@ -13,6 +13,8 @@ const AccSchema = new mongoose.Schema({
 
   referral: String,
 
+  ip: [String],
+
   socials: {
     instagram: {
       type: String,
