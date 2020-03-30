@@ -8,6 +8,10 @@ const flash = require('connect-flash');
 const esession = require('express-session');
 
 const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+
+const User = require('C:/Users/there/Documents/GitHub/mvp-website/models/user');
 
 require('./config/passport')(passport);
 
@@ -48,6 +52,35 @@ app.use('/users', require('./routing/users'));
 
 
 const port = process.env.PORT || 3000;
-app.listen(port, function() {
+// app.listen(port, function() {
+//   console.log(`App listening on port: ${port}`);
+// });
+server.listen(port, () => {
   console.log(`App listening on port: ${port}`);
+});
+
+io.on('connection', (socket) => {
+  var ad = socket.handshake.address;
+  console.log(ad.address + ':' +  ad.port);
+
+  socket.on('login', (email) => {
+    var ip = socket.request.connection.remoteAddress;
+
+    User.findOne({ email: email }).then(user => {
+      if (user) {
+        var found = false;
+        for (var i = 0; i < user.ip.length; i++) {
+          if (user.ip[i] == ip) {
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          user.ip.push(ip);
+          console.log(user + " logged in from new ip " + ip);
+          user.save();
+        }
+      }
+    });
+  });
 });

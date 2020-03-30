@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
-const RefferalSchema = new mongoose.Schema({
-  code: String
+const ReferralSchema = new mongoose.Schema({
+  invite: String,
+  uses: Number
 });
 
-const Refferal = mongoose.model('Business', RefferalSchema);
+const Referral = mongoose.model('Referral', ReferralSchema);
 
-module.exports = Refferal;
+module.exports = Referral;

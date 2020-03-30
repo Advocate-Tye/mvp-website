@@ -1,0 +1,7 @@
+<form action="/admin/ref" method="POST" style="margin-top: 1em">
+  <div class="form-group">
+    <input type="text" id="invite" name="invite" class="form-control" placeholder="Invite Code" value="<%= typeof invite != 'undefined' ? invite : '' %>" />
+  </div>
+  <button type="submit" class="btn btn-info btn-block">Addr</button>
+</form>
+<% include ./partials/messages %>

@@ -3,7 +3,10 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
+const { ensureAuthenticated } = require('../config/authenticate');
+
 const User = require('../models/user');
+const Referral = require('../models/referral');
 
 router.get('/login', (req, res) => res.render("login"));
 
@@ -13,7 +16,72 @@ router.get('/register', (req, res) => res.render("register"));
 
 router.get('/business', (req, res) => res.render("business"));
 
+router.get('/ref', ensureAuthenticated, (req, res) => {
+  res.render('acceptreferral', {user: req.user});
+  //console.log(req);
+});
+
 router.get('/businessinfo', (req, res) => res.render(""))
+
+router.post('/ref', (req, res) => {
+  const { invite } = req.body;
+
+  console.log(invite);
+
+  let errors = [];
+  if (invite == '') {
+    errors.push({ msg: 'Required field is empty' });
+  }
+
+  if (errors.length >= 1) {
+    res.render('acceptreferral', {
+      errors,
+      invite
+    });
+  }
+
+
+  Referral.findOne({ invite: invite }).then(ref => {
+    if (ref) {
+      console.log(ref);
+      User.findOne({ email: req.email }).then(user => {
+        if (user) {
+          if (user.referral != '' || user.referral != null) {
+            errors.push({ msg: 'You have already claimed a referral' });
+
+            res.render('acceptreferral', {
+              errors,
+              invite
+            });
+          }
+
+          ref.uses += 1;
+          user.referral = invite;
+
+          ref.save();
+
+          user.save().then(user => {
+            req.flash('success_msg', 'Successfully claimed referral!')
+            res.redirect('/users/ref');
+          }).catch(err => {
+            console.log(err);
+          });
+
+        }
+        else {
+          res.render('landing');
+        }
+      });
+    } else {
+      errors.push({ msg: 'Referral code is invalid' });
+
+      res.render('acceptreferral', {
+        errors,
+        invite
+      });
+    }
+  });
+});
 
 //Registration request handling
 router.post('/register', (req, res) => {

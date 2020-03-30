@@ -13,30 +13,36 @@ router.get('/', ensureAdmin, (req, res) => {
 });
 
 router.get('/ref', ensureAdmin, (req, res) => {
-  res.render(referral);
+  res.render('referral');
 });
 
 router.post('/ref', (req, res) => {
-  const code = req.body;
+  const { invite } = req.body;
 
   let errors = [];
 
-  if (!code) {
+  if (!invite) {
     erros.push({ msg: "Missing field"});
   }
 
-  Referral.findOne({ code: code}).then(ref => {
+  Referral.findOne({ invite: invite}).then(ref => {
     if (ref) {
       errors.push({ msg: "referral already exists" });
     }
     else {
+      if (errors.length >= 1) {
+        res.render('referral', {
+          errors,
+          invite
+        });
+      }
       const newRef = new Referral({
-        code
+        invite
       });
 
-      newRef.save().then(user => {
+      newRef.save().then(ref => {
         req.flash('success_msg', 'Successfully created business invite')
-        res.redirect('/admin');
+        res.redirect('/admin/ref');
       }).catch(err => {
         console.log(err);
       });
@@ -45,7 +51,7 @@ router.post('/ref', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { invite, business } = req.body;
+  const { invite, business} = req.body;
   let errors = [];
 
 

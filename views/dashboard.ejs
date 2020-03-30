@@ -17,4 +17,19 @@
   </div>
 </nav>
 
+
+<div class="container" style="text-align: center; margin-top: 15vh">
+  <a href="/users/ref" class="btn btn-lg btn-info" >Claim a Referral</a>
+</div>
+
+
 <% include comingsoon %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(() => {
+    var socket = io();
+    socket.emit('login', "<%= user.email %>");
+  });
+</script>
