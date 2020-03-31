@@ -1,52 +1,57 @@
-<% include ./partials/navbar %>
+
 
 <div class="middle">
-  <h1>We love you being you</h1>
-  <br>
-  <br>
-  <a href="/users/register" class="btn btn-lg btn-info registerbtn">
-    <h3>Now get rewarded for it</h3>
-  </a>
-  <br>
-  <br>
-  <a class="lead mt-4" href="javascript:scrollDown()">Or click this link to learn more :)</a>
+  <div class="container top-landing">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/"><img src="../AdvocateDraftLogos-512.png" alt="" width="48" height="48"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="" style="margin-top: 0.6em">
-    <h4 style="height: 105px;">For  <input id="post" maxlength='4' value="0001" style="outline: none"> posts a week</h4>
-    <h4>
-      You could earn <div class="dollar">
-        <h3 id="dollarAmount">$XXX</h3>
-      </div>
-      in
-      <div class="popup text-decoration-none" style="color: #ff2448">Joy (?)
-        <span class="popuptext" id="popC">
-          <p>You can earn joy by making posts and spend it on cool products and services. You can also earn a lot of bonus joy by participating in our events and making high quality posts.</p>
-        </span>
-      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">Store</a>
+          </li>
 
-    </h4>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+       >     </ul>
+      </div>
+    </nav>
+
+    <h1>We love you being you</h1>
+    <br>
+    <a href="/users/register" class="btn btn-lg btn-info registerbtn">
+      <h3>Now get rewarded for it</h3>
+    </a>
+
+    <div>style="height: 105px;">For <input id="post" maxlength='4' value="0001" style="outline: none"> posts a week</h4>
+      <h4>
+        You could earn <div class="dollar">
+          <h3 id="dollarAmount">$XXX</h3>
+        </div>
+        in
+        <div class="popup text-decoration-none" style="color: #ff2448">Joy (?)
+          <span class="popuptext" id="popC">
+            <p>You can earn joy by making posts anautomaticallyalso
+
+      </h4>
+    </div>
   </div>
-  <br>
-</div>
 
+<div class="middle">
 
-<div style="background-color: #fff5fd; height: 100%; text-align: center">
-  <div class="container" style="height: 50%; text-align: center; ">
-
-    <br>
-    <br>
-    <br>
-    <h1>Advocate is a platform that rewards you for doing what you do best ...
-</h1>
-    <p class="lead">
-...knowing what you like. We all have our favorite pastimes. Some of us love going to the boba place down the street after work, while others can't wait to try out some new clothes when prom rolls around.
-The point is, these things are yours, and we think the internet needs a bit more of them. No one wants to see some corporate advertisment that looks so fake it was probably made in a petri dish.
-What you enjoy doing, the things that make your day, your week, or your Kwanzaa, that's what we want to hear. And we're ready to slip you some rewards for doing it ;)
-</p>
-    <br>
-    <div class="row" style="margin-bottom: 1vh">
+  <div class="container" style="text-align: center;">
       <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left">
+        <div class="card" style="width: 18rem; text-align: left; height: 100%">
           <br>
           <img src="../phone.png" class="" width="100px" height="100px">
           <div class="card-body">
@@ -56,17 +61,17 @@ What you enjoy doing, the things that make your day, your week, or your Kwanzaa,
         </div>
       </div>
       <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left">
+        <div class="card" style="width: 18rem; text-align: left; height: 100%;">
           <br>
           <img src="../hearts.png" class="" width="100px" height="100px">
           <div class="card-body">
-            <h5 class="card-title">You'll get joy for the posts you make within 24hrs automatically. You'll also be able to get extra joy for completing special tasks, so be on the lookout!</h5>
-            <p class="card-text">Placeholder content. etc.</p>
+            <h5 class="card-title">You'll get joy for the posts you make within 24hrs automatically.</h5>
+            <p class="card-text"> You'll also be able to get extra joy for completing special tasks, so be on the lookout!</p>
           </div>
         </div>
       </div>
       <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left">
+        <div class="card" style="width: 18rem; text-align: left; height: 100%">
           <br>
           <img src="../gift.png" class="" width="100px" height="100px">
           <div class="card-body">
@@ -76,6 +81,24 @@ What you enjoy doing, the things that make your day, your week, or your Kwanzaa,
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+<div id="bottom" style="background-color: #fff5fd; height: 100%; text-align: center">
+  <div class="container" style="height: 50%; text-align: center; ">
+
+    <br>
+    <br>
+    <br>
+    <h1>Advocate is a platform that rewards you for doing what you do best ...
+    </h1>
+    <p class="lead">
+      ...knowing what you like. We all have our favorite pastimes. Some of us love going to the boba place down the street after work, while others can't wait to try out some new clothes when prom rolls around.
+      The point is, these things are yours, and we think the internet needs a bit more of them. No one wants to see some corporate advertisment that looks so fake it was probably made in a petri dish.
+      What you enjoy doing, the things that make your day, your week, or your Kwanzaa, that's what we want to hear. And we're ready to slip you some rewards for doing it ;)
+    </p>
+    <br>
 
   </div>
 </div>
@@ -116,9 +139,19 @@ What you enjoy doing, the things that make your day, your week, or your Kwanzaa,
   .middle {
     position: relative;
     margin: auto;
-    padding-top: 23vh;
+    margin-top: 0;
+    padding-top: 0vh;
     text-align: center;
     padding-bottom: 19%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .top-landing {
+    background: rgb(255,194,204);
+    background: linear-gradient(27deg, rgba(255,194,204,1) 0%, rgba(255,36,72,1) 100%);
+    color: #ffffff;
+
   }
 
   hr {
