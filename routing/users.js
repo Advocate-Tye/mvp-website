@@ -12,7 +12,14 @@ router.get('/login', (req, res) => res.render("login"));
 
 router.get('/betatest', (req, res) => res.render("betatest"));
 
-router.get('/register', (req, res) => res.render("register"));
+router.get('/register', (req, res) => {
+  if (req.query.valid) {
+    res.render("register", {email: req.query.valid});
+  }
+  else {
+    res.render("register");
+  }
+});
 
 router.get('/business', (req, res) => res.render("business"));
 

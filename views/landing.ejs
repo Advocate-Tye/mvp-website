@@ -1,16 +1,19 @@
-
-
 <div class="middle">
-  <% include ./partials/navbar %>
+  <% include ./partials/navbar2 %>
 
-  <h1 style="margin-top: 1em">We love you being you</h1>
-  <br><br>
+  <h1 style="margin-top: 3em">We love you being you</h1>
+
   <div class="row">
     <div class="col-md">
-      <p class="lead">Now get rewarded for it</p>
-      <a href="/users/register" class="btn btn-lg btn-info registerbtn">
-        <h3>Discover</h3>
-      </a>
+      <p class="lead" style="font-size: 30px">Now get rewarded for it</p>
+
+      <form class="" action="/" method="post" style="">
+        <input placeholder="Your email" type="text" name="email" id="emailEnter">
+        <button type="submit" class="btn btn-lg btn-info registerbtn">
+          <h4>Get started</h4>
+        </button>
+      </form>
+
 
       <div class="" style="margin-top: 0.2em">
         <h4 style="height: 105px;">For <input id="post" maxlength='4' value="0001" style="outline: none"> posts a week</h4>
@@ -24,12 +27,8 @@
               <p>You can earn joy by making posts and spend it on cool products and services. You can also earn a lot of bonus joy by participating in our events and making high quality posts.</p>
             </span>
           </div>
-
         </h4>
       </div>
-    </div>
-    <div class="col-md">
-
     </div>
   </div>
 
@@ -52,12 +51,11 @@
     <br>
     <div class="row" style="margin-bottom: 1vh">
       <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left">
+        <div class="card" style="width: 18rem; text-align: left; height: 100%">
           <br>
-          <img src="../phone.png" class="" width="100px" height="100px; height: 100%">
+          <img src="../phone.png" class="" width="100px" height="100px">
           <div class="card-body">
             <h5 class="card-title">Make a post about a brand you love</h5>
-            <p class="card-text">Your imagination is the limit, and there are no requirements. Just make something to show your appreciation for a business and share it with the world.</p>
           </div>
         </div>
       </div>
@@ -66,8 +64,7 @@
           <br>
           <img src="../hearts.png" class="" width="100px" height="100px">
           <div class="card-body">
-            <h5 class="card-title">You'll get joy for the posts you make within 24hrs automatically. You'll also be able to get extra joy for completing special tasks, so be on the lookout!</h5>
-            <p class="card-text">Placeholder content. etc.</p>
+            <h5 class="card-title">You'll get joy for the posts you make within 24hrs automatically.</h5>
           </div>
         </div>
       </div>
@@ -77,7 +74,6 @@
           <img src="../gift.png" class="" width="100px" height="100px">
           <div class="card-body">
             <h5 class="card-title">Redeem points for rewards </h5>
-            <p class="card-text">When you earn enough joy, you'll be able to use them to get rewards at our store.</p>
           </div>
         </div>
       </div>
@@ -92,6 +88,22 @@
   html {
     height: 100%;
     margin: 0;
+  }
+
+  #emailEnter {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 12px;
+    box-sizing: border-box;
+    border: 4px solid #bbb;
+    border-radius: 8px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+
+  #emailEnter:focus {
+      border: 4px solid #fff;
   }
 
   .bgimg {
@@ -120,6 +132,7 @@
     padding-bottom: 19%;
     background: linear-gradient(to bottom right, rgba(253, 113, 20, 0.8), rgba(245, 45, 111, 0.9)) center center no-repeat;
     color: #ffffff;
+    height: 100vh;
   }
 
   hr {

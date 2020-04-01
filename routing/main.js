@@ -10,6 +10,12 @@ const User = require('../models/user');
    //console.log(req)
  });
 
+ router.post('/', (req, res, next) => {
+   const { email } = req.body;
+   res.redirect('/users/register/?valid=' + encodeURIComponent(email));
+ });
+
+
 //router.get('/', (req, res) => res.redirect('/users/login'));
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
