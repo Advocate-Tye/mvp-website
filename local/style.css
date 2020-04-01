@@ -4,30 +4,37 @@
     border: none;
     padding: 0;
     width: 6ch;
-    background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/ 5.5ch 2px no-repeat;
+    color: #fff;
+    background: repeating-linear-gradient(90deg, #ddd 0, #ddd 1ch, transparent 0, transparent 1.5ch) 0 100%/ 5.5ch 2px no-repeat;
     font: 2ch droid sans mono, consolas, monospace;
     letter-spacing: 0.5ch;
 }
 
-.btn-info {
-  background-color: #ff2448;
-  border-color: #ff2448;
+.registerbtn {
+  background-color: transparent;
+  border: 3px solid #fff;
   border-radius: 10rem;
   padding-left: 1em;
   padding-right: 1em;
+  color: #fff;
+
+  transition: all 0.5s;
 }
 
-.btn-info:hover {
-  background-color: #ff6680;
-  border-color: #ff6680;
+.registerbtn:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #ff2448;
 }
 
 .dollar {
   display: inline-block;
-  background-color: #ff2448;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 6px;
   text-align: center;
   color: #fff;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 10px 3px 10px;
 }
 
 .popup {
