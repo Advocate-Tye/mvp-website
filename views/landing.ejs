@@ -1,18 +1,28 @@
 <div class="middle">
-  <% include ./partials/navbar2 %>
+  <% include ./partials/landingnav %>
 
-  <h1 style="margin-top: 3em">We love you being you</h1>
+
+  <div class="container">
+
 
   <div class="row">
-    <div class="col-md">
-      <p class="lead" style="font-size: 30px">Now get rewarded for it</p>
 
-      <form class="" action="/" method="post" style="">
-        <input placeholder="Your email" type="text" name="email" id="emailEnter">
-        <button type="submit" class="btn btn-lg btn-info registerbtn">
-          <h4>Get started</h4>
-        </button>
-      </form>
+    <div class="col-md">
+      <h1 style="margin-top: 2.5em">We love you being you</h1>
+      <p class="lead" style="font-size: 30px; margin-bottom: 2em">Now get rewarded for it</p>
+
+      <input class="c-checkbox" type="checkbox" id="checkbox">
+      <div class="c-formContainer" style="display: inline-block; margin: 0 auto">
+        <form class="c-form" action="/" method="post">
+          <input class="c-form__input" name="email" placeholder="E-mail" type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+          <button class="c-form__button" type="submit">Send</button>
+          <label class="c-form__buttonLabel" for="checkbox">
+
+          </label>
+
+        </form>
+        <label class="c-form__toggle" for="checkbox" data-title="Get started"></label>
+      </div>
 
 
       <div class="" style="margin-top: 0.2em">
@@ -32,55 +42,39 @@
     </div>
   </div>
 
-</div>
+  </div>
 
+  <div class="container">
 
-<div style="background-color: #fff5fd; height: 100%; text-align: center">
-  <div class="container" style="height: 50%; text-align: center; ">
+  <div class="row" style="margin-top: 3em">
+    <div class="col-lg-12">
+      <div class="elements-wrapper">
+        <div class="element">
+          <img class="icon" height="150" src="../phone_white.png" alt="alternative">
+          <p class="title">Make posts</p>
+        </div>
 
-    <br>
-    <br>
-    <br>
-    <h1>Advocate is a platform that rewards you for doing what you do best ...
-    </h1>
-    <p class="lead">
-      ...knowing what you like. We all have our favorite pastimes. Some of us love going to the boba place down the street after work, while others can't wait to try out some new clothes when prom rolls around.
-      The point is, these things are yours, and we think the internet needs a bit more of them. No one wants to see some corporate advertisment that looks so fake it was probably made in a petri dish.
-      What you enjoy doing, the things that make your day, your week, or your Kwanzaa, that's what we want to hear. And we're ready to slip you some rewards for doing it ;)
-    </p>
-    <br>
-    <div class="row" style="margin-bottom: 1vh">
-      <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left; height: 100%">
-          <br>
-          <img src="../phone.png" class="" width="100px" height="100px">
-          <div class="card-body">
-            <h5 class="card-title">Make a post about a brand you love</h5>
-          </div>
+        <img class="fas" width="30" src="http://www.entypo.com/images/chevron-right.svg" alt="">
+        <div class="element">
+          <img class="icon" height="150" src="../hearts_white.png" alt="alternative">
+          <p class="title">Receive joy</p>
         </div>
-      </div>
-      <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left; height: 100%">
-          <br>
-          <img src="../hearts.png" class="" width="100px" height="100px">
-          <div class="card-body">
-            <h5 class="card-title">You'll get joy for the posts you make within 24hrs automatically.</h5>
-          </div>
+
+        <img class="fas" width="30" src="http://www.entypo.com/images/chevron-right.svg" alt="">
+        <div class="element">
+          <img class="icon" height="150" src="../gift_white.png" alt="alternative">
+          <p class="title">Redeem rewards</p>
         </div>
-      </div>
-      <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left; height: 100%">
-          <br>
-          <img src="../gift.png" class="" width="100px" height="100px">
-          <div class="card-body">
-            <h5 class="card-title">Redeem points for rewards </h5>
-          </div>
-        </div>
+
       </div>
     </div>
+  </div>
 
   </div>
+
 </div>
+
+
 
 
 <style>
@@ -88,6 +82,11 @@
   html {
     height: 100%;
     margin: 0;
+  }
+
+  .element {
+    display: inline-block;
+    vertical-align: middle;
   }
 
   #emailEnter {
@@ -103,7 +102,13 @@
   }
 
   #emailEnter:focus {
-      border: 4px solid #fff;
+    border: 4px solid #fff;
+  }
+
+  .title {
+    color: #fff;
+    font: 700 1.375rem/1.75rem "Raleway", sans-serif;
+    margin-top: 1em;
   }
 
   .bgimg {
@@ -138,6 +143,146 @@
   hr {
     margin: auto;
     width: 40%;
+  }
+
+  .c-checkbox {
+    display: none;
+  }
+
+  .c-checkbox:checked+.c-formContainer .c-form {
+    width: 24em;
+  }
+
+  .c-checkbox:checked+.c-formContainer .c-form__toggle {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  .c-checkbox:checked+.c-formContainer .c-form__input,
+  .c-checkbox:checked+.c-formContainer .c-form__buttonLabel {
+    transition: 0.2s 0.1s;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .c-checkbox:not(:checked)+.c-formContainer .c-form__input:required:valid~.c-form__toggle {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .c-formContainer,
+  .c-form,
+  .c-form__toggle {
+    width: 12em;
+    height: 4em;
+  }
+
+  .c-formContainer {
+    position: relative;
+    font-weight: 700;
+  }
+
+  .c-form,
+  .c-form__toggle {
+    position: absolute;
+    border-radius: 6.25em;
+    background-color: #fff;
+    transition: 0.2s;
+  }
+
+  .c-form {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.625em;
+    box-sizing: border-box;
+    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+  }
+
+  .c-form__toggle {
+    color: #ff7b73;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .c-form__toggle::before {
+    font-size: 1.75em;
+    content: attr(data-title);
+  }
+
+  .c-form__input,
+  .c-form__button {
+    font: inherit;
+    border: 0;
+    outline: 0;
+    border-radius: 5em;
+    box-sizing: border-box;
+  }
+
+  .c-form__input,
+  .c-form__buttonLabel {
+    font-size: 1.75em;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+    transition: 0s;
+  }
+
+  .c-form__input {
+    color: #fcc;
+    height: 100%;
+    width: 100%;
+    padding: 0 0.714em;
+  }
+
+  .c-form__input::placeholder {
+    color: currentColor;
+  }
+
+  .c-form__input:required:valid {
+    color: #ff7b73;
+  }
+
+  .c-form__input:required:valid+.c-form__buttonLabel {
+    color: #fff;
+  }
+
+  .c-form__input:required:valid+.c-form__buttonLabel::before {
+    pointer-events: initial;
+  }
+
+  .c-form__buttonLabel {
+    color: #ffaea9;
+    height: 100%;
+    width: auto;
+  }
+
+  .c-form__buttonLabel::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    cursor: pointer;
+  }
+
+  .c-form__button {
+    color: inherit;
+    padding: 0;
+    height: 100%;
+    width: 5em;
+    background-color: #ff7b73;
+  }
+
+  .c-form__button:hover {
+    background-color: #ff2448;
   }
 </style>
 

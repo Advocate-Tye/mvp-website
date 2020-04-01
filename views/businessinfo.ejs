@@ -1,62 +1,96 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/"><img src="../AdvocateDraftLogos-512.png" alt="" width="48" height="48"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/dashboard">Dashboard</a>
-      </li>
-
-    </ul>
+<div class="heading" style="text-align: center; padding-bottom: 5em;">
+  <% include ./partials/bnav %>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <h1>We're here for your business</h1>
+    <p class="lead">...and our Advocates are too. We've built this community to help you thrive, whether that means providing you with marketing through special events or sales on our platforms store. We'll be with you every step of the way to make
+      sure YOU are getting the most out of our platform. </p>
   </div>
-</nav>
+</div>
 
-
-  <div class="container" style="height: 50%; text-align: center; ">
-
-    <br>
-    <br>
-    <br>
-    <h1>We're here for you...</h1>
-    <p class="lead">...and our Advocates are too. We've built this community to help you thrive, whether that means providing you with marketing through special events or sales on our platforms store. We'll be with you every step of the way to make sure YOU are getting the most out of our platform. </p>
-    <br>
-    <div class="row" style="margin-bottom: 1vh">
-      <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left">
-          <br>
-          <img src="../check.png" class="" width="100px" height="100px">
-          <div class="card-body">
-            <h5 class="card-title">Easy to set up</h5>
-            <p class="card-text"> Just provide us with the rewards you want to put up and we'll get you on the store and start tracking your progress.</p>
-          </div>
+<div class="container" style="text-align: center; ">
+  <br>
+  <h1>What we do</h1>
+  <br>
+  <div class="row" style="margin-bottom: 1vh; text-align: center">
+    <div class="col-sm">
+      <div class="card">
+        <br>
+        <img src="../check.png" class="icon" width="100px" height="100px" align="middle">
+        <div class="card-body">
+          <h5 class="card-title">Easy to set up</h5>
+          <p class="card-text"> Just provide us with the rewards you want to put up and we'll get you on the store and start tracking your progress.</p>
         </div>
       </div>
-      <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left">
-          <br>
-          <img src="../personalize.png" class="" width="100px" height="100px">
-          <div class="card-body">
-            <h5 class="card-title">Completely tailored to your needs</h5>
-            <p class="card-text">We'll work with you on a case by case basis to maximize your benefits.</p>
-          </div>
-        </div>
+
+      <div class="testicon">
+          <img id="micon" src="http://www.entypo.com/images/check.svg">
       </div>
-      <div class="col-sm">
-        <div class="card" style="width: 18rem; text-align: left">
-          <br>
-          <img src="../up.png" class="" width="100px" height="100px">
-          <div class="card-body">
-            <h5 class="card-title">Constantly improving</h5>
-            <p class="card-text">Over the course of the beta and later, we'll be releasing new ways for you to interact with your customers and expand your presence on our platform and the internet</p>
-          </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <br>
+        <img src="../personalize.png" class="icon" width="100px" height="100px" align="middle">
+        <div class="card-body">
+          <h5 class="card-title">Completely tailored to your needs</h5>
+          <p class="card-text">We'll work with you on a case by case basis to maximize your benefits.</p>
         </div>
       </div>
     </div>
-
+    <div class="col-sm">
+      <div class="card">
+        <br>
+        <img src="../up.png" class="icon" width="100px" height="100px" align="middle">
+        <div class="card-body">
+          <h5 class="card-title">Constantly improving</h5>
+          <p class="card-text">Over the course of the beta and later, we'll be releasing new ways for you to interact with your customers and expand your presence on our platform and the internet</p>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+<style media="screen">
+  body {
+    height: 100%;
+  }
+
+  .heading {
+    background: linear-gradient(to bottom right, rgba(253, 113, 20, 0.8), rgba(245, 45, 111, 0.9)) center center no-repeat;
+    color: #ffffff;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100vw;
+  }
+
+  .card {
+    color: #000;
+    height: 100%;
+    text-align: center;
+  }
+
+  .icon {
+    position: relative;
+  }
+
+  #micon {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .testicon {
+    background-color: #ff2448;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

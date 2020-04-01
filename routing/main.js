@@ -6,7 +6,12 @@ const User = require('../models/user');
 //router.get('/', (req, res) => res.render('welcome'));
 
  router.get('/', (req, res) => {
-   res.render('landing');
+   if (req.isAuthenticated()) {
+     res.redirect('/dashboard');
+   }
+   else {
+     res.render('landing');
+   }
    //console.log(req)
  });
 
