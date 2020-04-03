@@ -9,6 +9,7 @@ const esession = require('express-session');
 
 const app = express();
 const server = require('http').createServer(app);
+
 const io = require('socket.io')(server);
 
 const User = require('./models/user');
@@ -49,6 +50,7 @@ app.use(express.static(__dirname + '/local'));
 app.use('/', require('./routing/main'));
 app.use('/admin', require('./routing/admin'));
 app.use('/users', require('./routing/users'));
+app.use('/store', require('./routing/store'));
 
 
 const port = process.env.PORT || 3000;
