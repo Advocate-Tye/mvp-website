@@ -28,19 +28,19 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render('dashboard', {user: req.user, count})
   });
 
-  // if (req.user.isbusiness == false) {
-  //   res.render('dashboard', {user: req.user});
-  // } else {
-  //   res.render('businessdashboard', {user: req.user});
-  // }
+  if (req.user.isbusiness == false) {
+   res.render('dashboard', {user: req.user});
+  } else {
+    res.render('businessdashboard', {user: req.user});
+  }
 
   //console.log(req);
 });
 
-router.get('/businessdashboard', (req, res) => {
-  res.render('dashboard');
+//router.get('/businessdashboard', (req, res) => {
+//  res.render('dashboard');
   //console.log(req);
-});
+//});
 
 router.get('/learnmore', (req, res) => {
   res.render('businessinfo');

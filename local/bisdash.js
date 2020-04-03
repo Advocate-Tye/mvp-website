@@ -78,7 +78,7 @@ var salesChart = new Chart(ctx, {
 
     labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'],
     datasets: [{
-      label: ' - Product One',
+      label: ' - Butterbeer',
       data: [2, 9, 6, 3, 4, 2, 4],
       borderColor: "rgba(36, 255, 72, 1)",
       fill: false,
@@ -89,7 +89,7 @@ var salesChart = new Chart(ctx, {
 
     },
        {
-      label: ' - Product Two',
+      label: ' - Roast hog',
       data: [6, 1, 2, 5, 2, 2, 4],
       borderColor: "rgba(72, 36, 255, 1)",
       fill: false,
@@ -100,7 +100,7 @@ backgroundColor: "rgba(72, 36, 255, 1)",
 
     },
                {
-      label: ' - Product Three',
+      label: ' - Apple pie',
       data: [5, 2, 4, 2, 3, 3, 8],
       borderColor: "rgba(255, 72, 36, 1)",
       fill: false,
@@ -147,4 +147,12 @@ backgroundColor: "rgba(72, 36, 255, 1)",
       },
       }
     }
+});
+
+$(document).ready(function () {
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
 });

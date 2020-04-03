@@ -1,110 +1,283 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/"><img src="../AdvocateDraftLogos-512.png" alt="" width="48" height="48"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<% include ./partials/lightnav %>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/dashboard">Dashboard</a>
-      </li>
-
-    </ul>
-  </div>
-</nav>
-
-<body style="background-color: #fff5f5">
+<body style="background-color: #fff">
   <!-- <div class="center" style="text-align: center">
     <h1>Insights</h1>
   </div> -->
-<br><br><br><br><br>
-  <div class="container">
-    <div class="row no-gutters">
-      <div class="col-lg-6 pl-lg-2 mb-3">
-        <div class="card2 h-lg-100">
-                    <div class="card2-body h-100 pr-0">
-      <h1 style="text-align: center; color: "#ff2448"">1232<br> Points Earned</h1>
+  <br><br>
 
-    </div>
-    </div>
+  <div class="bw">
+    <div class="dh">
+      <div class="en bpz">
+        <nav class="bqg">
+
+          <div class="collapse bpd" id="nav-toggleable-md">
+            <form class="bqe">
+              <input class="form-control" type="text" placeholder="Search...">
+              <button type="submit" class="nz">
+
+              </button>
+            </form>
+            <ul class="nav pb nav-stacked wz">
+              <li class="axq">Dashboards</li>
+              <li class="pa">
+                <a class="oy active" href="#">Overview</a>
+              </li>
+              <li class="pa">
+                <a class="oy " href="#">Sales history</a>
+              </li>
+              <li class="pa">
+                <a class="oy " href="#">View products</a>
+              </li>
+              <li class="pa">
+                <a class="oy " href="#">Add a product</a>
+              </li>
+
+              <li class="axq">More</li>
+              <li class="pa">
+                <a class="oy " href="../docs/index.html">
+                  Settings
+                </a>
+              </li>
+            </ul>
+            <hr class="bre aez">
+          </div>
+        </nav>
+      </div>
+      <div class="et brf">
+        <div class="bqn">
+          <div class="bqo">
+            <h6 class="bqq">Dashboards</h6>
+            <h2 class="bqp">Overview for <%= user.business %></h2>
+          </div>
+
         </div>
-    <div class="col-lg-6 pl-lg-2 mb-3">
-      <div class="card2 h-lg-100">
-                  <div class="card2-body h-100 pr-0">
-      <h1 style="text-align: center"> 79<br> Sales Rewarded</h1>
-    </div>
-    </div>
-  </div>
+
+        <div class="bpu afd">
+          <h3 class="bpv bpw">Quick stats</h3>
+        </div>
+
+        <div class="dh brg">
+          <div class="eq fp afd amk asi">
+            <div class="brh bpn"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+              <div class="ago">
+                <span class="bpi">Points Earned</span>
+                <h2 class="bph">
+                  1,293
+                  <small class="bpj bpk">5%</small>
+                </h2>
+                <hr class="bpr aei">
+              </div>
+            </div>
+          </div>
+          <div class="eq fp afd amk asi">
+            <div class="brh bpq"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+              <div class="ago">
+                <span class="bpi">Sales Rewarded</span>
+                <h2 class="bph">
+                  75
+                  <small class="bpj bpl">1.3%</small>
+                </h2>
+                <hr class="bpr aei">
+              </div>
+            </div>
+          </div>
+          <div class="eq fp afd amk asi">
+            <div class="brh bpo"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+              <div class="ago">
+                <span class="bpi">Unique Products</span>
+                <h2 class="bph">
+                  7
+                  <small class="bpj bpk">11.75%</small>
+                </h2>
+                <hr class="bpr aei">
+              </div>
+            </div>
+          </div>
+          <div class="eq fp afd amk asi">
+            <div class="brh bpp"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+              <div class="ago">
+                <span class="bpi">Page views</span>
+                <h2 class="bph">
+                  14,758
+                  <small class="bpj bpl">1.3%</small>
+                </h2>
+                <hr class="bpr aei">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <hr class="aez">
+
+        <div class="dh avv afn">
+          <div class="container">
+            <div class="row no-gutters">
+              <div class="col-lg-6 pl-lg-2 mb-3">
+                <div class="card h-lg-100">
+
+                  <div class="card-body h-100 pr-0">
+                    <div class="custom-dropdown" style="width:20vh; margin-bottom: 10px;">
+                      <select>
+                        <option value="0">Current Week</option>
+                        <option value="1">Last Week</option>
+                        <option value="2">Current Month</option>
+                      </select>
+                    </div>
+                    <canvas class="chartdata" id="myChart" max-scale="100" width="100vh" height="100vh"></canvas>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col-lg-6 pl-lg-2 mb-3">
+                <div class="card h-lg-100">
+
+                  <div class="card-body h-100 pr-1">
+                    <div class="custom-dropdown" style="width:20vh; margin-bottom: 10px;">
+                      <select>
+                        <option value="0">Current Week</option>
+                        <option value="1">Last Week</option>
+                        <option value="2">Current Month</option>
+                      </select>
+                    </div>
+                    <canvas class="chartdata" id="myChart2" max-scale="100" width="100vh" height="100vh"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="afn">
+
+        <div class="dh">
+          <div class="eq afr">
+            <div class="by afd">
+              <h6 class="aya">
+                Countries
+              </h6>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 62.4%;"></span>
+                <span>United States</span>
+                <span class="awy">62.4%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 15.0%;"></span>
+                <span>India</span>
+                <span class="awy">15.0%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 5.0%;"></span>
+                <span>United Kingdom</span>
+                <span class="awy">5.0%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 5.0%;"></span>
+                <span>Canada</span>
+                <span class="awy">5.0%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 4.5%;"></span>
+                <span>Russia</span>
+                <span class="awy">4.5%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 2.3%;"></span>
+                <span>Mexico</span>
+                <span class="awy">2.3%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 1.7%;"></span>
+                <span>Spain</span>
+                <span class="awy">1.7%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 1.5%;"></span>
+                <span>France</span>
+                <span class="awy">1.5%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 1.4%;"></span>
+                <span>South Africa</span>
+                <span class="awy">1.4%</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span class="ayb" style="width: 1.2%;"></span>
+                <span>Japan</span>
+                <span class="awy">1.2%</span>
+              </a>
+
+            </div>
+            <a href="#" class="ce nr ags">All countries</a>
+          </div>
+          <div class="eq afr">
+            <div class="by afd">
+              <h6 class="aya">
+                Products
+              </h6>
+
+              <a class="pu rs xj ux" href="#">
+                <span>- Butterbeer</span>
+                <span class="awy">3,929,481</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span>- Roast hog</span>
+                <span class="awy">1,143,393</span>
+              </a>
+
+              <a class="pu rs xj ux" href="#">
+                <span>- Apple pie</span>
+                <span class="awy">938,287</span>
+              </a>
+
+              
+
+            </div>
+            <a href="#" class="ce nr ags">View all products</a>
+          </div>
+        </div>
+
       </div>
     </div>
+  </div>
+
 
   <!-- <div class="center" style="text-align: center">
     <h1>Trends</h1>
   </div> -->
 
-  <div class="container">
-    <div class="row no-gutters">
-      <div class="col-lg-6 pl-lg-2 mb-3">
-        <div class="card h-lg-100">
-
-          <div class="card-body h-100 pr-0">
-            <div class = "custom-dropdown" style = "width:20vh; margin-bottom: 10px;">
-              <select>
-                <option value="0">Current Week</option>
-                <option value="1">Last Week</option>
-                <option value="2">Current Month</option>
-              </select>
-            </div>
-            <canvas class="chartdata" id="myChart" max-scale="100" width="100vh" height="100vh"></canvas>
-          </div>
-          </div>
-
-
-      </div>
-      <div class="col-lg-6 pl-lg-2 mb-3">
-        <div class="card h-lg-100">
-
-          <div class="card-body h-100 pr-0">
-            <div class = "custom-dropdown" style = "width:20vh; margin-bottom: 10px;">
-              <select>
-                <option value="0">Current Week</option>
-                <option value="1">Last Week</option>
-                <option value="2">Current Month</option>
-              </select>
-            </div>
-            <canvas class="chartdata" id="myChart2" max-scale="100" width="100vh" height="100vh"></canvas>
-          </div>
-          </div>
-
-
-      </div>
-      <!-- <div class="col-lg-6 pl-lg-2 mb-3">
-        <div class="card h-lg-100">
-                    <div class="card-body h-100 pr-0">
-      <div class = "custom-dropdown" style = "width:20vh; margin-bottom: 10px;">
-        <select>
-          <option value="0">Current Week</option>
-          <option value="1">Last Week</option>
-          <option value="2">Current Month</option>
-        </select>
-      </div>
-      <div class="col-md-6 col-xxl-3 mb-3 pr-md-2">
-        <canvas class="chartdata" id="myChart2" max-scale="100" width="100vh" height="100vh"></canvas>
-      </div>
-    </div>
-    </div>
-    </div> -->
-    <a href="/users/register" class="btn btn-lg btn-info registerbtn" style="margin: auto"><h3>Add/Change a Product</h3></a>
-        </div>
-  </div>
-<!--
+  <!--
   <div class="center" style="text-align: center">
     <h1>Suggested Actions</h1>
   </div> -->
+
+  <link rel="stylesheet" href="../../toolkit-light.css">
+  <style media="screen">
+    .oy {
+      color: #000 !important;
+    }
+
+    .oy.active {
+      color: #fff !important;
+    }
+  </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
   <script src="bisdash.js" type="text/javascript"></script>
