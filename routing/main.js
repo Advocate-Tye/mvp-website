@@ -24,6 +24,7 @@ const User = require('../models/user');
 //router.get('/', (req, res) => res.redirect('/users/login'));
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
+  console.log('dashboardaccessed');
   User.countDocuments({}, function (err, count) {
     res.render('dashboard', {user: req.user, count})
   });
@@ -50,10 +51,6 @@ router.get('/connect', ensureAuthenticated, (req, res) => {
   //console.log(req);
 });
 
-router.get('/store', ensureAuthenticated, (req, res) => {
-  res.render('store', {user: req.user});
-  //console.log(req);
-});
 
 module.exports = router;
 //hello world

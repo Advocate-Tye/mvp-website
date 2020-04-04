@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const User = require('../models/user');
 const Referral = require('../models/referral');
+const Product = require('../models/product');
 
 const { ensureAdmin } = require('../config/admin');
 
@@ -14,6 +15,27 @@ router.get('/', ensureAdmin, (req, res) => {
 
 router.get('/ref', ensureAdmin, (req, res) => {
   res.render('referral');
+});
+
+router.get('/product', ensureAdmin, (req, res) => {
+  res.render('createproduct');
+});
+
+
+router.post('/product', (req, res) => {
+  const { name, price, folder, thumbnail } = req.body;
+
+  const newProduct = new Product({
+    name,
+    price,
+    folder,
+    thumbnail
+  });
+
+  newProduct.save().then(pr => {
+    req.flash('success_msg', 'Successfully created new product');
+    res.redirect('/admin/product')
+  })
 });
 
 router.post('/ref', (req, res) => {

@@ -1,0 +1,16 @@
+<form action="/admin/product" method="POST" style="margin-top: 1em">
+  <div class="form-group">
+    <input type="text" id="name" name="name" class="form-control" placeholder="" value="<%= typeof name != 'undefined' ? name : '' %>" />
+  </div>
+  <div class="form-group">
+    <input type="text" id="price" name="price" class="form-control" placeholder="" value="<%= typeof price != 'undefined' ? price : '' %>" />
+  </div>
+  <div class="form-group">
+    <input type="text" id="folder" name="folder" class="form-control" placeholder="" value="<%= typeof folder != 'undefined' ? folder : '' %>" />
+  </div>
+  <div class="form-group">
+    <input type="text" id="thumbnail" name="thumbnail" class="form-control" placeholder="" value="<%= typeof thumbnail != 'undefined' ? thumbnail : '' %>" />
+  </div>
+  <button type="submit" class="btn btn-info btn-block">Register</button>
+</form>
+<% include ./partials/messages %>
