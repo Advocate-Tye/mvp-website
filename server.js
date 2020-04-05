@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const esession = require('express-session');
 
 const app = express();
+
 const server = require('http').createServer(app);
 
 const io = require('socket.io')(server);
