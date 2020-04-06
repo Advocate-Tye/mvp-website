@@ -15,6 +15,11 @@ const User = require('../models/user');
    //console.log(req)
  });
 
+ router.get('/home', (req, res) => {
+   res.render('landing');
+   //console.log(req)
+ });
+
  router.post('/', (req, res, next) => {
    const { email } = req.body;
    res.redirect('/users/register/?valid=' + encodeURIComponent(email));
