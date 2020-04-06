@@ -24,13 +24,12 @@ const User = require('../models/user');
 //router.get('/', (req, res) => res.redirect('/users/login'));
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
-  console.log('dashboardaccessed');
-  User.countDocuments({}, function (err, count) {
-    res.render('dashboard', {user: req.user, count})
-  });
 
   if (req.user.isbusiness == false) {
-   res.render('dashboard', {user: req.user});
+    User.countDocuments({}, function (err, count) {
+      res.render('dashboard', {user: req.user, count})
+    });
+
   } else {
     res.render('businessdashboard', {user: req.user});
   }
@@ -51,6 +50,10 @@ router.get('/connect', ensureAuthenticated, (req, res) => {
   //console.log(req);
 });
 
+router.get('/store', ensureAuthenticated, (req, res) => {
+  res.render('store', {user: req.user});
+  //console.log(req);
+});
 
 module.exports = router;
 //hello world

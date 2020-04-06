@@ -1,3 +1,6 @@
 node_modules/
+ssl/
+.key
+.crt
 keys.js
 .DS_Store
