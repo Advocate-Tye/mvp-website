@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const AccSchema = new mongoose.Schema({
   invite: String,
 
+  name: String,
+
   email: String,
 
   password: String,
