@@ -31,12 +31,12 @@ setInputFilter(document.getElementById("post"), function(value) {
 });
 
 function calculateEstimate() {
-  var postInput = posts.value;
-  console.log(postInput);
-  var calculatedValue = 0;
-  if (postInput > 0) {
-    calculatedValue = postInput * 9 + 3;
-  }
-
-  document.getElementById("dollarAmount").innerHTML = "$" + calculatedValue;
+  // var postInput = posts.value;
+  // console.log(postInput);
+  // var calculatedValue = 0;
+  // if (postInput > 0) {
+  //   calculatedValue = postInput >= 1 ? Math.round(60 * Math.log((1/7) * postInput + 1) + 15) : 0;
+  // }
+  //
+  // document.getElementById("dollarAmount").innerHTML = "" + calculatedValue;
 }
