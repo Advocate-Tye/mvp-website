@@ -15,6 +15,10 @@ const AccSchema = new mongoose.Schema({
 
   referral: String,
 
+  location: String,
+
+  offercode: String,
+
   ip: [String],
 
   socials: {

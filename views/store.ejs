@@ -1,51 +1,27 @@
 <% include ./partials/lightnav %>
 <br>
 <div class="container">
-  <div class="row">
-    <div class="col-md">
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="../../<%= first.folder %>/<%= first.thumbnail %>.jpg" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#"><%= first.name %></a>
-          </h4>
-          <h5><%= first.price %> joy</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+  <% for (var i = 0; i < Math.floor(products.length / 3) + 1; i++) { %>
+    <div class="row" style="max-height: 40vh">
+      <% var rowItems = (products.length - i * 3) > 3 ? 3 : (products.length - i * 3); %>
+      <% for (var j = 0; j < rowItems; j++) { %>
+        <% var item = i * 3 + j; %>
+        <div class="col-md">
+          <div class="card">
+            <a href="#"><img class="card-img-top" src="../../<%= products[item].folder %>/<%= products[item].thumbnail %>" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= products[item].name %></a>
+              </h4>
+              <h5><%= products[item].price %> joy</h5>
+              <p class="card-text"><%= products[item].description %></p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">★ ★ ★ ★ ☆</small>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">★ ★ ★ ★ ☆</small>
-        </div>
-      </div>
+      <% } %>
     </div>
-    <div class="col-md">
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="../../<%= first.folder %>/<%= first.thumbnail %>.jpg" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#"><%= first.name %></a>
-          </h4>
-          <h5><%= first.price %> joy</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">★ ★ ★ ★ ☆</small>
-        </div>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="../../<%= first.folder %>/<%= first.thumbnail %>.jpg" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#"><%= first.name %></a>
-          </h4>
-          <h5><%= first.price %> joy</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">★ ★ ★ ★ ☆</small>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% } %>
 </div>

@@ -86,4 +86,13 @@ io.on('connection', (socket) => {
       }
     });
   });
+
+  socket.on('location', (email, location) => {
+    User.findOne({ email: email }).then(user => {
+      if (user) {
+        user.location = location;
+        user.save();
+      }
+    });
+  });
 });

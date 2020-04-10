@@ -8,7 +8,8 @@ const { ensureAuthenticated } = require('../config/authenticate');
 
 router.get('/', (req, res) => {
   Product.find({}, (err, products) => {
-    res.render('store', {user: req.user, first: products[0]});
+    console.log(products);
+    res.render('store', {user: req.user, products: products});
   });
 });
 

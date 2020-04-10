@@ -55,10 +55,5 @@ router.get('/connect', ensureAuthenticated, (req, res) => {
   //console.log(req);
 });
 
-router.get('/store', ensureAuthenticated, (req, res) => {
-  res.render('store', {user: req.user});
-  //console.log(req);
-});
-
 module.exports = router;
 //hello world
