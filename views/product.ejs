@@ -31,11 +31,15 @@
         </div>
     </div>
     <div class="col-md" style="text-align: center">
-      <h2>10% off butterbeer with an order of food</h2>
+      <h2><%= product.name %></h2>
       <br>
-      <button type="submit" class="btn btn-info btn-lg btn-block">Redeem for 100 joy</button>
+      <% if (product.id == "5e8fbdec1c9d44000042b3da") { %>
+        <a href="/store/madras" class="btn btn-info btn-lg btn-block">Redeem for <%= product.price %> joy</a>
+      <% } else { %>
+        <button type="submit" class="btn btn-info btn-lg btn-block">Redeem for <%= product.price %> joy</button>
+      <% } %>
       <br>
-      <p>The Three Broomsticks is a popular inn and pub in the all wizarding village of Hogsmeade and is often frequented by students from the neighbouring Hogwarts School of Witchcraft and Wizardry. The inn is often warm, crowded, and a bit smoky, but clean and welcoming.</p>
+      <p><%= product.description %></p>
       <img src="https://cdn.discordapp.com/attachments/665027260776185877/695430965299904532/UFSumNCqiQzUeCfrdNwAOw6JYbz-2nOwqqaq0Wfm_GHn9i1xYXTBrJ-js9Ksb1np738JWcJx3Oyx3lPZl_45ISU837mAey_RTVwU.png" alt="" width="100" height="100">
     </div>
   </div>
