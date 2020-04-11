@@ -53,12 +53,40 @@ function selectLoc(loc) {
 
 <% include ./partials/lightnav %>
 
-<% if (typeof error != 'undefined' && error != '') { %>
-  <p><%= error %></p>
-<% } else if (typeof success != 'undefined' && success != '') { %>
-  <p><%= success %></p>
-<% } else { %>
-<p><%= madras.uses %>/5</p>
-<p>Your code is <%= madras.id %></p>
-<a href="advct.us/store/madras/?code=<%= madras.id %>">https://advct.us/store/madras/?code=<%= madras.id %></a>
-<% } %>
+<br>
+<br>
+
+<div class="container">
+  <% if (typeof error != 'undefined' && error != '') { %>
+    <p><%= error %></p>
+  <% } else if (typeof success != 'undefined' && success != '') { %>
+    <p><%= success %></p>
+  <% } else { %>
+    <div class="row">
+      <div class="col-md" style="text-align: center">
+        <h1><%= madras.uses %>/5</h1>
+
+      </div>
+      <div class="col-md" style="text-align: center">
+        <p class="lead">Your link is:</p>
+        <a href="advct.us/store/madras/?code=<%= madras.id %>">https://advct.us/store/madras/?code=<%= madras.id %></a>
+          <% if (madras.uses >= 5) { %>
+            <p>Coupon code: <%= madras.code %> </p>
+          <% } else {%>
+            <p>Share with <%= 5 - madras.uses %> more people to claim your discount</p>
+          <% } %>
+      </div>
+    </div>
+    <br>
+    <div class="container" style="text-align: center">
+      <p></p>
+      <h4>Instructions: </h4><p class="">
+        1. Press "redeem" to generate a link. <br>
+        2. Click the link and share it with 4 or more people you want to order with.<br>
+        3. You might need to refresh as people to join to see an updated member count. When 5 people have joined the group, refresh and you'll see a code <br>
+        3. Now, everyone can call Madras Dosa corner and complete their orders. While ordering, provide your code to the receiver.<br>
+        Note: All five or more people must be in the same city for the discount to apply.
+      </p>
+    </div>
+  <% } %>
+</div>

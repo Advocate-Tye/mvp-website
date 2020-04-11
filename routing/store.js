@@ -99,12 +99,14 @@ router.get('/madras', (req, res) => {
               const uses = 1;
               const location = nuser.location;
               const accepted = [req.user.id];
+              const code = 'tg456wdh';
 
               const newM = new Madras({
                 user,
                 uses,
                 location,
-                accepted
+                accepted,
+                code
               });
 
               console.log(newM);

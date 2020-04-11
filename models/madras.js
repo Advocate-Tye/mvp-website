@@ -4,7 +4,8 @@ const MadrasSchema = new mongoose.Schema({
   user: String,
   uses: Number,
   location: String,
-  accepted: [String]
+  accepted: [String],
+  code: String
 });
 
 const Madras = mongoose.model('Madras', MadrasSchema);
