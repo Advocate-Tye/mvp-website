@@ -7,19 +7,60 @@
 <section class="section-col row" style="flex-direction: row; margin-top: 1em;">
 
   <div class="col" style="margin-top: 10px; display: block; vertical-align: baseline; float: left;">
-    <h4 class="d-flex justify-content-center">Sign in to Advocate</h4>
-    <form action="/users/login" method="POST" style="margin-top: 1em">
-      <div class="form-group">
-        <input type="email" id="username" name="username" class="form-control" placeholder="Email" />
-      </div>
-      <div class="form-group">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
-      </div>
-      <button type="submit" class="btn btn-info btn-block">Login</button>
-    </form>
-    <p class="lead mt-4">
-      Don't have an account? <a href="/users/register"> Register Now</a>
-    </p>
+    <div class="login-wrap">
+    	<div class="login-html">
+    		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+
+    		<div class="login-form">
+
+    			<div class="sign-in-htm">
+            <br><br>
+                          <form action="/users/login" method="POST">
+    				<div class="group">
+          <input type="email" id="username" name="username"  placeholder="Email" class="input" />
+    				</div>
+            <br>
+    				<div class="group">
+          <input type="password" id="password" name="password" placeholder="Password" class="input" />
+    				</div>
+            <br>
+    				<div class="group">
+    					<input id="check" type="checkbox" class="check" checked>
+    					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+    				</div>
+    				<div class="group">
+    					<input type="submit" class="button" value="Sign In">
+    				</div>
+    				<div class="hr"></div>
+    				<!-- <div class="foot-lnk">
+    					<a href="#forgot">Forgot Password?</a>
+    				</div> -->
+                </form>
+    			</div>
+
+    			<div class="sign-up-htm">
+            <br><br>
+        <form action="/users/register" method="POST" >
+    				<div class="group">
+              <input type="text" id="email" name="email" class="input" placeholder="Email" value="<%= typeof email != 'undefined' ? email : '' %>" />
+    				</div><br>
+    				<div class="group">
+    					 <input type="password" id="password" name="password" class="input" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+    				</div><br>
+    				<div class="group">
+    					 <input type="password" id="password2" name="password2" class="input" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+    				</div><br>
+
+    				<div class="group">
+    					<input type="submit" class="button" value="Sign Up">
+    				</div>
+    				<div class="hr"></div>
+                                  </form>
+    			</div>
+    		</div>
+    	</div>
+    </div>
 
     <% include ./partials/messages %>
   </div>
@@ -35,6 +76,152 @@
 </section>
 
 <style media="screen">
+
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+	width:100%;
+	margin:auto;
+	max-width:80vw;
+	min-height:80vh;
+	position:relative;
+	background:url(https://lh3.googleusercontent.com/xal-ACZkyqBbGUUc8pmRC9XjiYCg-oieSfTFj_JEKkGc6AfPN8E-8OuqZQiih_fXM5qCmVnCDSLPjIvtC3DMET9eDoGaoLUWh7MHJU67XW9HiptxjkRE1YRFcFKUTE4xSFEInMNIIT9lAGguAmgwjYKYLYoanseY0Vemvqb5MYheFbtbsdjz9Xb6bd1gjt4TrXE7zoZGJWCISrd34nGNQSH9wXKdgWXQ_opp7iS5fRoM9uLj3iZ88KY1z0JYoBv_BomOZXr22wZ1LU_UzEMqHhfD73JrF1cIorA7HGOJnrv7XX7CWmoTP692YeOfRBScO8uu2bl9esXd9SYN3vGFIBdhq1ZN7YOWYf8TmE26dL9YugnA7JVC6TzZKUndjzLFOM5P2NL8L_W35YqlTLjBESRpjXcdcZUJJVUUKALRkmm4XA2iPxTsJW5Zmc1azmmc_rGKxLfE20LuelrO7pZ3sJpVcixaZ3Q1Wli121Wwrnm9JVJrkIRJvKFT4HJBvvYdzjJ8CB15Rp3RvlO3_3_zN615KGLIju-_mIu8sqVqvQjQ9ALk7kWcP5wanxGSxOy1U4poCOeiYYpyuDo6fvjTHpfXmAs_DBnrZnKJQ2e2mSxVK8DQj2n1_zFm3NHiHxb9bMRD1d8DKietFa0lTLRttJ5vzlOA2vqI-huBPRDq7zB8-wwqbkrQkNHa_6csqQ=w324-h182-no) no-repeat center;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:rgba(40,57,101,.9);
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+.login-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+	color:#fff;
+	border-color:#1161ee;
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:#1161ee;
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+}
   .section-col {
     width: 600px;
     margin: 0 auto;
