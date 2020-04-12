@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../../../circle.css">
+
 <div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -19,35 +21,37 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
-        integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo="
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-$(() => {
-  <% if (typeof user.location == 'undefined' || user.location == "") { %>
-    $('#locationModal').modal({
-      backdrop: true,
-      keyboard: false,
-      focus: true
-    });
-  <% } %>
-});
+  $(() => {
+    <
+    %
+    if (typeof user.location == 'undefined' || user.location == "") {
+      % >
+      $('#locationModal').modal({
+        backdrop: true,
+        keyboard: false,
+        focus: true
+      }); <
+      %
+    } % >
+  });
 
-function selectLoc(loc) {
-  var socket = io();
-  $('#locationModal').modal('hide');
+  function selectLoc(loc) {
+    var socket = io();
+    $('#locationModal').modal('hide');
 
-  <% if (typeof user.email != 'undefined' && user.email != "") {%>
-    socket.emit('location', "<%= user.email %>", loc);
-  <% } %>
-}
-
+    <
+    %
+    if (typeof user.email != 'undefined' && user.email != "") {
+      % >
+      socket.emit('location', "<%= user.email %>", loc); <
+      %
+    } % >
+  }
 </script>
 
 <div class="heading" style="text-align: center; padding-bottom: 5em;">
@@ -73,10 +77,6 @@ function selectLoc(loc) {
 </div>
 
 <br>
-
-<div class="largenum">
-  <%= user.points %>
-</div>
 
 <div class="main-content container">
   <!-- HEADER -->
@@ -110,181 +110,16 @@ function selectLoc(loc) {
 
     </div>
   </div> <!-- / .header -->
+  <div class="container" style="text-align: center">
 
-  <br>
+  </div>
 
-  <!-- CARDS -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 col-lg-6 col-xl">
-
-        <!-- Value  -->
-        <div class="card">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col">
-
-                <!-- Title -->
-                <h6 class="text-uppercase text-muted mb-2">
-                  Joy
-                </h6>
-
-                <!-- Heading -->
-                <span class="h2 mb-0">
-                  <%= user.points %>
-                </span>
-              </div>
-              <div class="col-auto">
-
-                <!-- Icon -->
-                <span class="h2 fe fe-dollar-sign text-muted mb-0"></span>
-
-              </div>
-            </div> <!-- / .row -->
-          </div>
-        </div>
-
-      </div>
-      <div class="col-12 col-lg-6 col-xl">
-
-        <!-- Hours -->
-        <div class="card">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col">
-
-                <!-- Title -->
-                <h6 class="text-uppercase text-muted mb-2">
-                  Posts made
-                </h6>
-
-                <!-- Heading -->
-                <span class="h2 mb-0">
-                  0
-                </span>
-
-              </div>
-              <div class="col-auto">
-
-                <!-- Icon -->
-                <span class="h2 fe fe-briefcase text-muted mb-0"></span>
-
-              </div>
-            </div> <!-- / .row -->
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-12 col-lg-6 col-xl">
-
-        <!-- Time -->
-        <div class="card">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col">
-
-                <!-- Title -->
-                <h6 class="text-uppercase text-muted mb-2">
-                  Rewards claimed
-                </h6>
-
-                <!-- Heading -->
-                <span class="h2 mb-0">
-                  0
-                </span>
-
-              </div>
-              <div class="col-auto">
-
-                <!-- Icon -->
-                <span class="h2 fe fe-clock text-muted mb-0"></span>
-
-              </div>
-            </div> <!-- / .row -->
-          </div>
-        </div>
-
-      </div>
-    </div> <!-- / .row -->
-    <br>
-    <div class="row">
-      <div class="col-12 col-xl-8">
-
-        <!-- Convertions -->
-        <div class="card">
-          <div class="card-header">
-
-            <!-- Title -->
-            <h4 class="card-header-title">
-              Your posts
-            </h4>
-
-          </div>
-          <div class="card-body">
-
-            <!-- Chart -->
-            <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand">
-                  <div class=""></div>
-                </div>
-                <div class="chartjs-size-monitor-shrink">
-                  <div class="">Instagram not connected</div>
-                </div>
-              </div>
-              <canvas id="conversionsChart" class="chart-canvas chartjs-render-monitor" style="display: block; height: 300px; width: 876px;" width="967" height="331"></canvas>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-xl-4">
-
-        <!-- Traffic -->
-        <div class="card">
-          <div class="card-header">
-
-            <!-- Title -->
-            <h4 class="card-header-title">
-              Earning Joy
-            </h4>
-
-            <!-- Tabs -->
-            <ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
-              <li class="nav-item" data-toggle="chart" data-target="#trafficChart" data-trigger="click" data-action="toggle" data-dataset="0">
-                <a href="#" class="nav-link active" data-toggle="tab">
-                  Opportunities
-                </a>
-              </li>
-              <li class="nav-item" data-toggle="chart" data-target="#trafficChart" data-trigger="click" data-action="toggle" data-dataset="1">
-                <a href="#" class="nav-link" data-toggle="tab">
-                  Help
-                </a>
-              </li>
-            </ul>
-
-          </div>
-          <div class="card-body">
-
-            <!-- Chart -->
-            <div class="chart chart-appended">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand">
-                  <div class=""></div>
-                </div>
-                <div class="chartjs-size-monitor-shrink">
-                  <div class=""></div>
-                </div>
-              </div>
-              <canvas id="trafficChart" class="chart-canvas chartjs-render-monitor" data-toggle="legend" data-target="#trafficChartLegend" width="441" height="264" style="display: block; height: 240px; width: 400px;"></canvas>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </div> <!-- / .row -->
+  <div class="c100 p50 big green">
+    <span><%= user.points %> joy</span>
+    <div class="slice">
+      <div class="bar"></div>
+      <div class="fill"></div>
+    </div>
   </div>
 </div> <!-- / .row -->
 
