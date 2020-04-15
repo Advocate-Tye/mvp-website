@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../../../circle.css">
-
 <div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -21,41 +19,39 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
+        integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo="
+        crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-  $(() => {
-    <
-    %
-    if (typeof user.location == 'undefined' || user.location == "") {
-      % >
-      $('#locationModal').modal({
-        backdrop: true,
-        keyboard: false,
-        focus: true
-      }); <
-      %
-    } % >
-  });
+$(() => {
+  <% if (typeof user.location == 'undefined' || user.location == "") { %>
+    $('#locationModal').modal({
+      backdrop: true,
+      keyboard: false,
+      focus: true
+    });
+  <% } %>
+});
 
-  function selectLoc(loc) {
-    var socket = io();
-    $('#locationModal').modal('hide');
+function selectLoc(loc) {
+  var socket = io();
+  $('#locationModal').modal('hide');
 
-    <
-    %
-    if (typeof user.email != 'undefined' && user.email != "") {
-      % >
-      socket.emit('location', "<%= user.email %>", loc); <
-      %
-    } % >
-  }
+  <% if (typeof user.email != 'undefined' && user.email != "") {%>
+    socket.emit('location', "<%= user.email %>", loc);
+  <% } %>
+}
+
 </script>
 
 <div class="heading" style="text-align: center; padding-bottom: 5em;">
-  <% include ./partials/bnav %>
+  <% include ./partials/usernav %>
   <br>
   <br>
   <br>
@@ -67,68 +63,48 @@
     <% } %>
     <br>
     <br>
-    <div class="button_container">
+    <div class="row align-items-end">
+    <div class="col-auto">
 
       <button class="btn" onclick="window.location.href = '/users/ref';"><span>Connect Accounts</span></button>
 
     </div>
+    <div class="col-auto">
+
+      <!-- Button -->
+      <button class="btn" onclick="window.location.href = '/users/ref';"><span>Claim a referral</span></button>
+
+    </div>
+    <div class="col-auto">
+
+      <!-- Button -->
+      <button class="btn" onclick="window.location.href = '/users/ref';"><span>View Previous Posts</span></button>
+
+    </div>
+  </div>
   </div>
 
 </div>
 
 <br>
 
-<div class="main-content container">
-  <!-- HEADER -->
-  <div class="header">
-    <div class="container-fluid">
+<div class="largenum">
 
-      <!-- Body -->
-      <div class="header-body">
-        <div class="row align-items-end">
-          <div class="col">
+  <%= user.points %>
 
-            <!-- Pretitle -->
-            <h6 class="header-pretitle">
-              Overview
-            </h6>
+</div>
 
-            <!-- Title -->
-            <h1 class="header-title">
-              Dashboard
-            </h1>
 
-          </div>
-          <div class="col-auto">
 
-            <!-- Button -->
-            <button class="btn" onclick="window.location.href = '/users/ref';"><span>Claim a referral</span></button>
 
-          </div>
-        </div> <!-- / .row -->
-      </div> <!-- / .header-body -->
 
-    </div>
-  </div> <!-- / .header -->
-  <div class="container" style="text-align: center">
-
-  </div>
-
-  <div class="c100 p50 big green">
-    <span><%= user.points %> joy</span>
-    <div class="slice">
-      <div class="bar"></div>
-      <div class="fill"></div>
-    </div>
-  </div>
-</div> <!-- / .row -->
 
 
 <style media="screen">
+
   @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
-
-
+  .
   .button_container {
     position: relative;
     left: 0;
